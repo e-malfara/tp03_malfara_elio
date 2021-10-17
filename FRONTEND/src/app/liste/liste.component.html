@@ -1,0 +1,10 @@
+<div class="container text-center mt-4 mb-4">
+
+    <h1 class="title"> Affichage liste complète </h1>
+
+    <div *ngFor="let produit of (listeProduits | async)">
+        <ul class="list-group">
+            <li class="list-group-item">{{ produit.nom }} | Développeur : {{ produit.dev }} | Note : {{ produit.note }} /20</li>
+          </ul>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="container text-center">
+
+    <h1 class="title"> Affichage moteur de recherche </h1>
+
+    <input class="form-control mb-4" type="search" [(ngModel)]="search">
+
+    <div *ngFor="let produit of (listeProduits | async | filter:search)">
+        <ul class="list-group">
+            <li class="list-group-item">{{ produit.nom }} | Développeur : {{ produit.dev }} | Note : {{ produit.note }} /20</li>
+          </ul>
+    </div>
+
+    <div *ngIf="(listeProduits | async | filter:search).length <1">
+        Not Found
+    </div>
+</div>
